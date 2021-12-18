@@ -1,0 +1,30 @@
+{% extends 'base.html'%}
+
+
+{% block title %}
+Net Pay By Country
+{% endblock %}
+
+
+{% block body %}
+<h1>Net Pay By Country</h1>
+<h2>Gross Pay: {{ salary }}</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Country</th>
+            <th>Tax Rate</th>
+            <th>Net Pay</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for entry in entries %}
+            <tr>
+                <td>{{ entry.country }}</td>
+                <td>{{ entry.taxrate }}</td>
+                <td>{{ entry.netpay }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

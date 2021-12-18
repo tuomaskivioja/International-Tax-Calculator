@@ -1,0 +1,27 @@
+{% extends 'base.html'%}
+
+
+{% block head %}
+Enter Gross Pay
+{% endblock %}
+
+
+{% block body %}
+
+<h1>Enter Gross Pay</h1>
+<form action="/" method="post">
+    <div class="form-group">
+        <input autocomplete="off" class="form-control" min="1" step="0.01" name="salary" placeholder="Gross Pay" type="number">
+    </div>
+    <div class="form-group">
+        <label for="currency">Select Currency:</label>
+        <select class="form-select form-select-sm" name="currency" aria-label=".form-select-sm example">
+            <option selected value="USD">US Dollar</option>
+            <option value="GBP">Pound Sterling</option>
+            <option value="EUR">Euro</option>
+            <option value="CAD">Canadian Dollar</option>
+        </select>
+    </div>
+    <button class="btn btn-primary" type="Submit">Enter</button>
+</form>
+{% endblock %}
