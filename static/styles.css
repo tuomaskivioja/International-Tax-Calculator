@@ -1,35 +1,430 @@
-
-main .form-control
-{
-    /* Center form controls */
-    display: inline-block;
-
-    /* Override Bootstrap's 100% width for form controls */
-    width: auto;
+/* Professional Color Palette */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --success-color: #27ae60;
+    --warning-color: #f39c12;
+    --light-gray: #ecf0f1;
+    --dark-gray: #34495e;
+    --text-color: #2c3e50;
+    --border-color: #bdc3c7;
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
-main
-{
-    /* Scroll horizontally as needed */
-    overflow-x: auto;
+/* Global Styles */
+body {
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px 0;
+    color: var(--text-color);
+}
 
-    /* Center contents */
+/* Main Container */
+.main-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Card Styling */
+.card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    border: none;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.card-header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-gray) 100%);
+    color: white;
+    padding: 25px;
+    border-bottom: none;
     text-align: center;
 }
 
-main img
-{
-    /* Constrain images on small screens */
-    max-width: 100%;
+.card-body {
+    padding: 40px;
 }
 
-main table {
-    text-align: left;
+/* Typography */
+h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
+h2 {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-align: center;
+}
 
-tbody {
-    display: table-row-group;
+.subtitle {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 10px;
+    font-weight: 300;
+}
+
+/* Form Styling */
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-control {
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    padding: 15px 20px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    background: #fafafa;
+}
+
+.form-control:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+    background: white;
+    transform: translateY(-2px);
+}
+
+.form-select {
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    padding: 15px 20px;
+    font-size: 1.1rem;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+.form-select:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+    background: white;
+}
+
+/* Button Styling */
+.btn-primary {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, #2980b9 100%);
+    border: none;
+    border-radius: 10px;
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+    background: linear-gradient(135deg, #2980b9 0%, var(--secondary-color) 100%);
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, var(--dark-gray) 0%, var(--primary-color) 100%);
+    border: none;
+    border-radius: 10px;
+    padding: 12px 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+}
+
+.btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* Table Styling */
+.table-container {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    margin-top: 30px;
+}
+
+.table {
+    margin: 0;
+    font-size: 1.05rem;
+}
+
+.table thead th {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-gray) 100%);
+    color: white;
+    border: none;
+    padding: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.table tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+.table tbody tr:hover {
+    background-color: rgba(52, 152, 219, 0.1);
+}
+
+.table tbody td {
+    padding: 18px 20px;
+    border-color: #ecf0f1;
     vertical-align: middle;
-    border-color: inherit;
+}
+
+/* Country Flag Icons */
+.country-flag {
+    width: 24px;
+    height: 18px;
+    margin-right: 10px;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+/* Tax Rate Badges */
+.tax-rate {
+    background: linear-gradient(135deg, var(--warning-color) 0%, #e67e22 100%);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* Net Pay Styling */
+.net-pay {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--success-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-container {
+        padding: 0 15px;
+    }
+    
+    .card-body {
+        padding: 25px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .table-responsive {
+        border-radius: 15px;
+    }
+}
+
+/* Loading Animation */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Success/Error Messages */
+.alert {
+    border-radius: 10px;
+    border: none;
+    padding: 15px 20px;
+    margin-bottom: 25px;
+}
+
+.alert-success {
+    background: linear-gradient(135deg, var(--success-color) 0%, #2ecc71 100%);
+    color: white;
+}
+
+.alert-danger {
+    background: linear-gradient(135deg, var(--accent-color) 0%, #c0392b 100%);
+    color: white;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+}
+
+/* Input Icons */
+.input-group-text {
+    background: var(--light-gray);
+    border: 2px solid var(--border-color);
+    border-right: none;
+    border-radius: 10px 0 0 10px;
+    color: var(--dark-gray);
+}
+
+.input-group .form-control {
+    border-left: none;
+    border-radius: 0 10px 10px 0;
+}
+
+.input-group .form-control:focus {
+    border-left: none;
+}
+
+/* Feature Items */
+.feature-item {
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+}
+
+.feature-item h5 {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* Stat Cards */
+.stat-card {
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(52, 152, 219, 0.1);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: scale(1.05);
+}
+
+.stat-card h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 10px 0;
+}
+
+/* Best Option Highlight */
+.best-option {
+    padding: 20px;
+}
+
+.highlight-card {
+    background: linear-gradient(135deg, var(--success-color) 0%, #2ecc71 100%);
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 10px;
+    box-shadow: var(--shadow);
+}
+
+/* Progress Bars */
+.progress {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    border-radius: 10px;
+    transition: width 0.6s ease;
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+/* Form Labels */
+.form-label {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+}
+
+.form-text {
+    color: #6c757d;
+    font-size: 0.875rem;
+    margin-top: 5px;
+}
+
+/* Country Flags */
+.country-flag {
+    font-size: 1.2rem;
+    margin-right: 8px;
+}
+
+/* Hover Effects for Table Rows */
+.table tbody tr {
+    transition: all 0.3s ease;
+}
+
+.table tbody tr:hover {
+    background-color: rgba(52, 152, 219, 0.1);
+    transform: scale(1.01);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Enhanced Button Styles */
+.btn-lg {
+    padding: 18px 50px;
+    font-size: 1.2rem;
+    border-radius: 12px;
+}
+
+/* Additional Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.table-container {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Mobile Enhancements */
+@media (max-width: 576px) {
+    .btn-lg {
+        padding: 15px 30px;
+        font-size: 1rem;
+    }
+    
+    .stat-card h3 {
+        font-size: 1.5rem;
+    }
+    
+    .feature-item {
+        margin-bottom: 30px;
+    }
 }
