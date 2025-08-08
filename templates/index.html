@@ -1,27 +1,99 @@
-{% extends 'base.html'%}
+{% extends 'base.html' %}
 
-
-{% block head %}
-Enter Gross Pay
-{% endblock %}
-
+{% block title %}International Tax Calculator - Compare Global Tax Rates{% endblock %}
 
 {% block body %}
-
-<h1>Enter Gross Pay</h1>
-<form action="/" method="post">
-    <div class="form-group">
-        <input autocomplete="off" class="form-control" min="1" step="0.01" name="salary" placeholder="Gross Pay" type="number">
+<div class="row justify-content-center">
+    <div class="col-lg-8 col-md-10">
+        <div class="card mt-5">
+            <div class="card-header">
+                <h1><i class="fas fa-globe-americas me-3"></i>International Tax Calculator</h1>
+                <p class="subtitle">Compare your net income across different countries</p>
+            </div>
+            <div class="card-body">
+                <form action="/" method="post" id="taxForm">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="salary" class="form-label">
+                                    <i class="fas fa-dollar-sign me-2"></i>Annual Gross Salary
+                                </label>
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-money-bill-wave"></i>
+                                    </span>
+                                    <input 
+                                        autocomplete="off" 
+                                        class="form-control" 
+                                        min="1" 
+                                        step="0.01" 
+                                        name="salary" 
+                                        placeholder="Enter your annual salary" 
+                                        type="number"
+                                        required
+                                        id="salary">
+                                </div>
+                                <div class="form-text">Enter your gross annual salary before taxes</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="currency" class="form-label">
+                                    <i class="fas fa-coins me-2"></i>Currency
+                                </label>
+                                <select class="form-select" name="currency" id="currency" required>
+                                    <option value="USD" selected>
+                                        <i class="fas fa-flag-usa"></i> US Dollar (USD)
+                                    </option>
+                                    <option value="GBP">
+                                        🇬🇧 British Pound (GBP)
+                                    </option>
+                                    <option value="EUR">
+                                        🇪🇺 Euro (EUR)
+                                    </option>
+                                    <option value="CAD">
+                                        🇨🇦 Canadian Dollar (CAD)
+                                    </option>
+                                </select>
+                                <div class="form-text">Select your salary currency</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-4">
+                        <button class="btn btn-primary btn-lg" type="submit">
+                            <i class="fas fa-calculator me-2"></i>Calculate Tax Comparison
+                        </button>
+                    </div>
+                </form>
+                
+                <div class="mt-5">
+                    <div class="row text-center">
+                        <div class="col-md-4">
+                            <div class="feature-item">
+                                <i class="fas fa-chart-bar fa-2x text-primary mb-3"></i>
+                                <h5>Compare Countries</h5>
+                                <p class="text-muted">See how your salary performs across different tax systems</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="feature-item">
+                                <i class="fas fa-exchange-alt fa-2x text-success mb-3"></i>
+                                <h5>Real-time Rates</h5>
+                                <p class="text-muted">Up-to-date currency conversion and tax calculations</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="feature-item">
+                                <i class="fas fa-shield-alt fa-2x text-info mb-3"></i>
+                                <h5>Accurate Data</h5>
+                                <p class="text-muted">Based on current tax rates and regulations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="form-group">
-        <label for="currency">Select Currency:</label>
-        <select class="form-select form-select-sm" name="currency" aria-label=".form-select-sm example">
-            <option selected value="USD">US Dollar</option>
-            <option value="GBP">Pound Sterling</option>
-            <option value="EUR">Euro</option>
-            <option value="CAD">Canadian Dollar</option>
-        </select>
-    </div>
-    <button class="btn btn-primary" type="Submit">Enter</button>
-</form>
+</div>
 {% endblock %}
